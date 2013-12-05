@@ -4,11 +4,18 @@
 	<script src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
 	<script src="http://documentcloud.github.com/underscore-min.js"></script>
 	<script type="text/javascript" src="todo.js"></script>
-	<link rel="stylesheet" href="/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="todo.css">
 </head>
 <body>
 <div ng-controller="TodoCtrl">
-    Total todos : {{totalTodos}}
+    <h2>Total todos : {{totalTodos}}</h2>
+    <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+    </ul>
 </div>
 </body>
 </html>
