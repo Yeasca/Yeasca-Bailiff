@@ -46,12 +46,18 @@
             <h2>Créer un constat</h2>
         </div>
         <div class="row">
-            <input type="text" class="form-control " placeholder="Nom du client">
-            <input type="text" class="form-control " placeholder="Prénom du client">
-
+            <input id="constat-nom-client" type="text" class="form-control " placeholder="Nom du client">
+            <input id="constat-prenom-client" type="text" class="form-control " placeholder="Prénom du client">
+            <div class="row">
+                <div id="constat-date-heure" class="well well-sm"><span id="constat-date">18/12/2013</span><span id="constat-heure">14:55</span></div>
+            </div>
 
         </div>
+        <div class="row">
 
+            <button type="button" class="btn">Valider le constat</button>
+
+        </div>
         <video id="myVideo"></video>
         <script src="js/gumwrapper.min.js"></script>
         <script>
