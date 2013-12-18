@@ -1,4 +1,11 @@
+.client_list{
+    background-color: #7f9293;
+    color:white;
+}
 
+.client_fichier_list{
+    color:black;
+}
 
 /* ==========================================================================
    Author's custom styles
