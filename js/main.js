@@ -8,7 +8,6 @@ function AfficherListeClients() {
 
 }
 
-}
 
 function AfficherUtilisateurs() {
     $('#utilisateurs').slideToggle();
