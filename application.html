@@ -44,14 +44,14 @@
     <div class="container">
         <div class="row">
             <h2>Administration</h2>
-            <div style="display:inline-flex;margin-left: -30px;" class="row col-xs-10 col-md-10 col-lg-10">
-                <button type="button" class="btn btn-default  col-xs-4 col-sm-4 col-md-4 col-lg-4" onclick="openCustomers()">
+            <div style="margin-left: -30px;" >
+                <button type="button" class="btn btn-default  col-xs-12 col-sm-12 col-md-12 col-lg-12" onclick="AfficherListeClients()">
                     <span class="glyphicon glyphicon-circle-arrow-down"></span> Gérer fichiers clients
-                </button>
-                <button type="button" class="btn btn-default  col-xs-4 col-sm-4 col-md-4 col-lg-4" onclick="openUsers()">
+                </button><br>
+                <button type="button" class="btn btn-default  col-xs-12 col-sm-12 col-md-12 col-lg-12" onclick="AfficherUtilisateurs()">
                     <span class="glyphicon glyphicon-circle-arrow-down"></span> Administration
-                </button>
-                <button type="button" class="btn btn-default  col-xs-4 col-sm-4 col-md-4 col-lg-4" onclick="openAccount()">
+                </button><br>
+                <button type="button" class="btn btn-default  col-xs-12 col-sm-12 col-md-12 col-lg-12" onclick="AfficherCompte()">
                     <span class="glyphicon glyphicon-circle-arrow-down"></span> Visualisation
                 </button>
             </div>
@@ -59,35 +59,53 @@
         <div class="row">
             <div id="fichierclient" style="display:none;margin-top:15px;">
                 <h2>Liste des clients</h2>
-                <div class="row col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                <button type="button" class="btn-client btn btn-default  col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+                    <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Créer un client
+                </button>
+                <div class="CreationClient" style="display:none;margin-top:15px;">
+                    <input type="text" class="form-control " placeholder="Entrez le compte">
+                    <select class="form-control">
+                        <option>Secrétaire 1</option>
+                        <option>Secrétaire 2</option>
+                        <option>Secrétaire 3</option>
+                        <option>Secrétaire 4</option>
+                    </select>
+                    <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">
+                        <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Valider
+                    </button>
+                    <button type="button" class="btn-return-client btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" >
+                        <span class="glyphicon glyphicon-chevron-left"></span> Retour
+                    </button>
+                </div>
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <ul class="list-group">
-                        <li class="client_list list-group-item" onclick="openUtilisateurs(1)">Client 1
-                            <span class="badge">14</span>
-                            <div id="compte1" style="display:none">
+                        <div class="clientgeneral"><li class="client_list list-group-item" ><span class="badge">14</span>Client 1</li></div>
+
+                            <div class="fichierclientid" style="display:none">
                                 <ul class="list-group">
                                     <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 1</a>
                                     <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 2</a>
                                 </ul>
                             </div>
-                        </li>
-                        <li  class="client_list list-group-item" onclick="openUtilisateurs(2)">Client 2
-                            <span class="badge">5</span>
-                            <div id="compte2" style="display:none">
+
+                        <div class="clientgeneral"><li  class="client_list list-group-item" ><span class="badge">5</span>Client 2</li></div>
+
+                            <div class="fichierclientid" style="display:none">
                                 <ul class="list-group">
                                     <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 1</a>
                                     <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 2</a>
                                 </ul>
                             </div>
-                        </li>
-                        <li class="client_list list-group-item" onclick="openUtilisateurs(3)">Client 3
-                            <span class="badge">156</span>
-                            <div id="compte3" style="display:none">
+
+                        <div class="clientgeneral"><li class="client_list list-group-item" ><span class="badge">145</span>Client 3</li></div>
+
+                            <div class="fichierclientid" style="display:none">
                                 <ul class="list-group">
                                     <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 1</a>
                                     <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 2</a>
                                 </ul>
                             </div>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -97,13 +115,63 @@
                 <h2>Liste des Utilisateurs</h2>
                 <div class="row col-xs-5 col-sm-5 col-md-5 col-lg-5">
                     <div class="list-group">
-                        <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">User 1</a>
-                        </ul>
+                        <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">User 1</a>                               </ul>
                         <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">User 2</a>
-                        <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">User 3</a>
-                        </ul>
+                        <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">User 3</a>                          </ul>
 
+                <div class=" row col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+                    <div class="CreationUtilisateur" style="display:none;margin-top:15px;">
+                        <input type="text" class="form-control " placeholder="Entrez le compte">
+                        <select class="form-control">
+                            <option>Secrétaire 1</option>
+                            <option>Secrétaire 2</option>
+                            <option>Secrétaire 3</option>
+                            <option>Secrétaire 4</option>
+                        </select>
+                        <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">
+                            <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Valider
+                        </button>
+                        <button type="button" class="btn-return-user btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" >
+                            <span class="glyphicon glyphicon-chevron-left"></span> Retour
+                        </button>
                     </div>
+
+                    <div class="usergeneral"><li class="client_list list-group-item">RAMOS Yoann</li></div>
+
+                        <div class="Utilisateur">
+                                    <ul class="client_fichier_list list-group">
+                                        <li class="list-group-item">mail : yramos@epsi.fr</li>
+                                        <li class="list-group-item">Adresse : 1 rue des deux ponts</li>
+                                        <li class="list-group-item">Ville : Mérignac</li>
+                                        <li class="list-group-item">Code Postal : 33300</li>
+                                        <li class="list-group-item">Téléphone : 0675846984</li>
+                                        <li class="list-group-item">Téléphone : 0675846984</li>
+                                    </ul>
+                        </div>
+
+                    <div class="usergeneral"><li  class="client_list list-group-item" >GAICHET Emeric</li></div>
+                        <div class="Utilisateur" style="display:none">
+                            <ul class="list-group client_fichier_list">
+                                <li class="list-group-item">mail : egaichet@epsi.fr</li>
+                                <li class="list-group-item">Adresse : 5 rue de la gare </li>
+                                <li class="list-group-item">Ville :Langogne </li>
+                                <li class="list-group-item">Code Postal : 33700</li>
+                                <li class="list-group-item">Téléphone : 0652324851</li>
+                            </ul>
+                        </div>
+
+                    <div class="usergeneral"><li class="client_list list-group-item" >ROCHE Alexis</li></div>
+                        <div class="Utilisateur" style="display:none">
+                            <ul class="list-group client_fichier_list">
+                                <li class="list-group-item">mail : aroche@epsi.fr</li>
+                                <li class="list-group-item">Adresse :16 rue de l'arc en ciel </li>
+                                <li class="list-group-item">Ville : Pradelles</li>
+                                <li class="list-group-item">Code Postal : 48300</li>
+                                <li class="list-group-item">Téléphone : 0632659814</li>
+                            </ul>
+                        </div>
+
+
                 </div>
             </div>
         </div>
@@ -122,17 +190,86 @@
         </div>
     </div>
 </div>
-</div>
-</div>
+<style>
+    .usergeneral {
+        cursor: pointer;
+    }
+
+    .Utilisateur {
+        display: none;
+        cursor: pointer;
+    }
+
+</style>
 <script type="text/javascript">
     $(function() {
-        $('#datepickerdebut').datepicker({
-            language: 'fr'
+        $(".usergeneral").on("click", function() {
+            if($(this).next(".Utilisateur").attr('style') == 'display: block;'){
+                $(this).next(".Utilisateur").slideUp(200);
+            } else {
+                $(".Utilisateur").each(function(){
+                    $(this).slideUp(200);
+                });
+                $(this).next(".Utilisateur").slideToggle(200);
+            }
+
+
+        });
+        $(".Utilisateur").on("click", function() {
+            $(this).slideUp(200);
+        });
+    });
+
+    $(function() {
+        $(".clientgeneral").on("click", function() {
+            if($(this).next(".fichierclientid").attr('style') == 'display: block;'){
+                $(this).next(".fichierclientid").slideUp(200);
+            } else {
+                $(".fichierclientid").each(function(){
+                    $(this).slideUp(200);
+                });
+                $(this).next(".fichierclientid").slideToggle(200);
+            }
+
+
+        });
+        $(".fichierclientid").on("click", function() {
+            $(this).slideUp(200);
+        });
+    });
+
+    $(function() {
+        $(".btn-user").on("click", function() {
+            $(".usergeneral").each(function(){
+                $(this).slideUp(200);
+            });
+            $('.CreationUtilisateur').slideToggle(200);
+        });
+    });
+
+    $(function() {
+        $(".btn-client").on("click", function() {
+            $(".clientgeneral").each(function(){
+                $(this).slideUp(200);
+            });
+            $('.CreationClient').slideToggle(200);
+        });
+    });
+
+    $(function() {
+        $(".btn-return-user").on("click", function() {
+            $(".usergeneral").each(function(){
+                $(this).slideToggle(200);
+            });
+            $('.CreationUtilisateur').slideUp(200);
         });
     });
     $(function() {
-        $('#datepickerfin').datepicker({
-            language: 'fr'
+        $(".btn-return-client").on("click", function() {
+            $(".clientgeneral").each(function(){
+                $(this).slideToggle(200);
+            });
+            $('.CreationClient').slideUp(200);
         });
     });
 </script>

@@ -3,22 +3,24 @@ function openMoreFilter() {
 
 }
 
-function openCustomers() {
+function AfficherListeClients() {
     $('#fichierclient').slideToggle();
 
 }
 
-function openUsers() {
+}
+
+function AfficherUtilisateurs() {
     $('#utilisateurs').slideToggle();
 
 }
 
-function openAccount() {
+function AfficherCompte() {
     $('#compte').slideToggle();
 
 }
 
-function openUtilisateurs(id) {
+function AfficherUtilisateurParID(id) {
     $('#compte'+id).slideToggle();
 }
 
