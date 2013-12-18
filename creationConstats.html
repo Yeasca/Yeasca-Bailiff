@@ -59,26 +59,35 @@
                 </button>
             </div>
         </div>
-            <div class="row">
-                <div id="filtreplus" style="display:none;margin-top:15px;">
-                    <div class="row col-xs-5 col-sm-5 col-md-5 col-lg-5" >
-                        <input type="text" class="form-control " placeholder="Entrez le nom">
-                        <select class="form-control">
-                            <option>Secrétaire 1</option>
-                            <option>Secrétaire 2</option>
-                            <option>Secrétaire 3</option>
-                            <option>Secrétaire 4</option>
-                        </select>
-                    </div>
-                    <div class="row-reverse col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                        <input type="text" id="datepickerdebut" class="form-control" placeholder="Date début">
-                        <input type="text" id="datepickerfin" class="form-control " placeholder="Date fin">
-                    </div>
+        <div class="row">
+            <div id="filtreplus" style="display:none;margin-top:15px;">
+                <div class="row col-xs-5 col-sm-5 col-md-5 col-lg-5" >
+                    <input type="text" class="form-control " placeholder="Entrez le nom">
+                    <select class="form-control">
+                        <option>Secrétaire 1</option>
+                        <option>Secrétaire 2</option>
+                        <option>Secrétaire 3</option>
+                        <option>Secrétaire 4</option>
+                    </select>
+                </div>
+                <div class="row-reverse col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                    <input type="text" id="datepickerdebut" class="form-control" placeholder="Date début">
+                    <input type="text" id="datepickerfin" class="form-control " placeholder="Date fin">
                 </div>
             </div>
-        <span>http://davidwalsh.name/browser-camera</span>
         </div>
+        <!--
+            Ideally these elements aren't created until it's confirmed that the
+            client supports video/camera, but for the sake of illustrating the
+            elements involved, they are created with markup (not JavaScript)
+        -->
+        <span>zertyuiodfghjklm</span>
+        <video id="video" width="640" height="480" autoplay></video>
+        <button id="snap">Snap Photo</button>
+        <canvas id="canvas" width="640" height="480"></canvas>
+        <span>http://davidwalsh.name/browser-camera</span>
     </div>
+</div>
 </div>
 </div>
 <script type="text/javascript">
@@ -93,6 +102,7 @@
         });
     });
 </script>
+<script type="text/javascript" src="js/main.js"></script>
 
 
 
