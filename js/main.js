@@ -35,3 +35,5 @@ var dateReconstruite = (jour<10 ? '0' : '') + jour
     +  d.getFullYear();
 $('#constat-heure').html(heureReconstruite);
 $('#constat-date').html(dateReconstruite);
+
+$('#constat-huissier').html('Yoyo');

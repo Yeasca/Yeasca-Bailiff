@@ -4,14 +4,12 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/angular1.2.4.min.js"></script>
     <script src="js/underscore-min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         body {
             padding-top: 50px;
@@ -34,7 +32,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Accueil</a></li>
                 <li class="active"><a href="constats.html">Mes constats</a></li>
-                <li><a href="application.html">Mon Application</a></li>
+                <li><a href="application.html">Administration du bureau</a></li>
             </ul>
         </div><!--/.navbar-collapse -->
     </div>
@@ -50,7 +48,8 @@
             <input id="constat-nom-client" type="text" class="form-control " placeholder="Nom du client">
             <input id="constat-prenom-client" type="text" class="form-control " placeholder="Prénom du client">
             <div class="row">
-                <div  class="well">Créé le <span id="constat-date"></span> à <span id="constat-heure"></span>.</div>
+                <div class="well well-sm">Créé le <span id="constat-date"></span> à <span id="constat-heure"></span>.</div>
+                <div class="well well-sm">Par Me. <span id="constat-huissier"></span>.</div>
             </div>
 
         </div>
