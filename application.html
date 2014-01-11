@@ -143,24 +143,6 @@
 </style>
 <script type="text/javascript">
     $(function() {
-        $(".usergeneral").on("click", function() {
-            if($(this).next(".Utilisateur").attr('style') == 'display: block;'){
-                $(this).next(".Utilisateur").slideUp(200);
-            } else {
-                $(".Utilisateur").each(function(){
-                    $(this).slideUp(200);
-                });
-                $(this).next(".Utilisateur").slideToggle(200);
-            }
-
-
-        });
-        $(".Utilisateur").on("click", function() {
-            $(this).slideUp(200);
-        });
-    });
-
-    $(function() {
         $(".clientgeneral").on("click", function() {
             if($(this).next(".fichierclientid").attr('style') == 'display: block;'){
                 $(this).next(".fichierclientid").slideUp(200);
