@@ -1,0 +1,24 @@
+{"ListeClient":[
+        {
+            "nom": "Client1",
+            "Constat": [
+            {
+                "IDConstat":"Constat1"
+            },
+            {
+                "IDConstat":"Constat2"
+            }
+            ]
+        },
+        {
+            "nom": "Client2",
+            "Constat": [
+            {
+                "IDConstat":"Constat1"
+            },
+            {
+                "IDConstat":"Constat2"
+            }
+            ]
+        }
+]}

@@ -1,0 +1,26 @@
+{"ListeUsers":[
+    {
+        "nom": "Yoann RAMOS",
+        "mail":"mail de yoann",
+        "adresse":"adresse de yoann",
+        "ville":"ville de yoann",
+        "Code Postal":"cp de yoann",
+        "Téléphone":"tel de yoann"
+    },
+    {
+        "nom": "Alexis ROCHE",
+        "mail":"mail de alexis",
+        "adresse":"adresse d'alexis",
+        "ville":"ville d'alexis",
+        "Code Postal":"cp d'alexis",
+        "Téléphone":"tel d'alexis"
+    },
+    {
+        "nom": "Emeric GAICHET",
+        "mail":"mail d'emeric",
+        "adresse":"adresse d'emeric",
+        "ville":"ville d'emeric",
+        "Code Postal":"cp d'emeric",
+        "Téléphone":"tel d'emeric"
+    }
+]}

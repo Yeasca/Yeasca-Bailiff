@@ -77,37 +77,13 @@
                         <span class="glyphicon glyphicon-chevron-left"></span> Retour
                     </button>
                 </div>
-                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <ul class="list-group">
-                        <div class="clientgeneral"><li class="client_list list-group-item" ><span class="badge">14</span>Client 1</li></div>
+                <ul class="list-group">
+                <div id="lesclients" class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                            <div class="fichierclientid" style="display:none">
-                                <ul class="list-group">
-                                    <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 1</a>
-                                    <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 2</a>
-                                </ul>
-                            </div>
 
-                        <div class="clientgeneral"><li  class="client_list list-group-item" ><span class="badge">5</span>Client 2</li></div>
 
-                            <div class="fichierclientid" style="display:none">
-                                <ul class="list-group">
-                                    <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 1</a>
-                                    <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 2</a>
-                                </ul>
-                            </div>
-
-                        <div class="clientgeneral"><li class="client_list list-group-item" ><span class="badge">145</span>Client 3</li></div>
-
-                            <div class="fichierclientid" style="display:none">
-                                <ul class="list-group">
-                                    <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 1</a>
-                                    <a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">Constat 2</a>
-                                </ul>
-                            </div>
-
-                    </ul>
                 </div>
+                </ul>
             </div>
         </div>
         <div class="row">
@@ -132,43 +108,10 @@
                             <span class="glyphicon glyphicon-chevron-left"></span> Retour
                         </button>
                     </div>
-
-                    <div class="usergeneral"><li class="client_list list-group-item">RAMOS Yoann</li></div>
-
-                        <div class="Utilisateur">
-                                    <ul class="client_fichier_list list-group">
-                                        <li class="list-group-item">mail : yramos@epsi.fr</li>
-                                        <li class="list-group-item">Adresse : 1 rue des deux ponts</li>
-                                        <li class="list-group-item">Ville : Mérignac</li>
-                                        <li class="list-group-item">Code Postal : 33300</li>
-                                        <li class="list-group-item">Téléphone : 0675846984</li>
-                                        <li class="list-group-item">Téléphone : 0675846984</li>
-                                    </ul>
-                        </div>
-
-                    <div class="usergeneral"><li  class="client_list list-group-item" >GAICHET Emeric</li></div>
-                        <div class="Utilisateur" style="display:none">
-                            <ul class="list-group client_fichier_list">
-                                <li class="list-group-item">mail : egaichet@epsi.fr</li>
-                                <li class="list-group-item">Adresse : 5 rue de la gare </li>
-                                <li class="list-group-item">Ville :Langogne </li>
-                                <li class="list-group-item">Code Postal : 33700</li>
-                                <li class="list-group-item">Téléphone : 0652324851</li>
-                            </ul>
-                        </div>
-
-                    <div class="usergeneral"><li class="client_list list-group-item" >ROCHE Alexis</li></div>
-                        <div class="Utilisateur" style="display:none">
-                            <ul class="list-group client_fichier_list">
-                                <li class="list-group-item">mail : aroche@epsi.fr</li>
-                                <li class="list-group-item">Adresse :16 rue de l'arc en ciel </li>
-                                <li class="list-group-item">Ville : Pradelles</li>
-                                <li class="list-group-item">Code Postal : 48300</li>
-                                <li class="list-group-item">Téléphone : 0632659814</li>
-                            </ul>
-                        </div>
+                    <div id="lesusers" class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -227,8 +170,6 @@
                 });
                 $(this).next(".fichierclientid").slideToggle(200);
             }
-
-
         });
         $(".fichierclientid").on("click", function() {
             $(this).slideUp(200);
@@ -269,6 +210,15 @@
             $('.CreationClient').slideUp(200);
         });
     });
+
+
+    ChargerListeClients();
+    ChargerListeUsers();
+
+
+
+
+
 </script>
 
 
