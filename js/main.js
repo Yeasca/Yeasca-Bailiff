@@ -18,10 +18,24 @@ function AfficherUsers() {
             });
             $(this).next(".Utilisateur").slideToggle(200);
         }
-
-
     });
     $(".Utilisateur").on("click", function() {
+        $(this).slideUp(200);
+    });
+}
+
+function AfficherConstat() {
+    $(".constatgeneral").on("click", function() {
+        if($(this).next(".Fichier").attr('style') == 'display: block;'){
+            $(this).next(".Fichier").slideUp(200);
+        } else {
+            $(".Fichier").each(function(){
+                $(this).slideUp(200);
+            });
+            $(this).next(".Fichier").slideToggle(200);
+        }
+    });
+    $(".Fichier").on("click", function() {
         $(this).slideUp(200);
     });
 }
@@ -52,16 +66,11 @@ function AfficherCompte() {
 
 }
 
-function AfficherUtilisateurParID(id) {
-    $('#compte'+id).slideToggle();
-}
-
-
 function ChargerListeClients() {
     $.getJSON('FichierTestClients.json', function(données) {
         $.each(données.ListeClient, function(key,val){
             $('div#lesclients').append(
-                '<div class="clientgeneral"><li class="client_list list-group-item" onclick="AfficherContratDuClient()"><span class="badge" >14</span>'+val.nom+'</li></div>' +
+                '<div class="clientgeneral" onclick="AfficherContratDuClient()"><li class="client_list list-group-item"><span class="badge" >14</span>'+val.nom+'</li></div>' +
                     '<div class="fichierclientid" style="display:none">'+
                     '<ul class="list-group">' +
                     '<a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">'+val.Constat[0].IDConstat+'</a>' +
@@ -77,7 +86,7 @@ function ChargerListeUsers() {
     $.getJSON('FichierTestUsers.json', function(données) {
         $.each(données.ListeUsers, function(key,val){
             $('div#lesusers').append(
-                '<div class="usergeneral"><li class="client_list list-group-item" onclick="AfficherUsers()">'+val.nom+'</li></div>'+
+                '<div class="usergeneral" onclick="AfficherUsers()"><li class="client_list list-group-item" >'+val.nom+'<div class="row-reverse"><button class="btn btn-default col-xs-0 col-sm-0 col-md-0 col-lg-0"><span class="glyphicon glyphicon-pencil"></span></button></div></li></div>'+
                     '<div class="Utilisateur">'+
                     '<ul class="client_fichier_list list-group">'+
                     '<li class="list-group-item">'+val.mail+'</li>'+

@@ -9,6 +9,17 @@
     font-size: 15px;
 }
 
+.constat_list{
+    background-color: #7f9293;
+    color:white;
+    font-size: 15px;
+}
+
+.constat_fichier_list{
+    color:black;
+    font-size: 15px;
+}
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */

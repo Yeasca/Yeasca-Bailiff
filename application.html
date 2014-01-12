@@ -96,10 +96,8 @@
                     <div class="CreationUtilisateur" style="display:none;margin-top:15px;">
                         <input type="text" class="form-control " placeholder="Entrez le compte">
                         <select class="form-control">
-                            <option>Secrétaire 1</option>
-                            <option>Secrétaire 2</option>
-                            <option>Secrétaire 3</option>
-                            <option>Secrétaire 4</option>
+                            <option>Secrétaire</option>
+                            <option>Huissier</option>
                         </select>
                         <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">
                             <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Valider
@@ -143,22 +141,6 @@
 </style>
 <script type="text/javascript">
     $(function() {
-        $(".clientgeneral").on("click", function() {
-            if($(this).next(".fichierclientid").attr('style') == 'display: block;'){
-                $(this).next(".fichierclientid").slideUp(200);
-            } else {
-                $(".fichierclientid").each(function(){
-                    $(this).slideUp(200);
-                });
-                $(this).next(".fichierclientid").slideToggle(200);
-            }
-        });
-        $(".fichierclientid").on("click", function() {
-            $(this).slideUp(200);
-        });
-    });
-
-    $(function() {
         $(".btn-user").on("click", function() {
             $(".usergeneral").each(function(){
                 $(this).slideUp(200);
@@ -193,14 +175,8 @@
         });
     });
 
-
     ChargerListeClients();
     ChargerListeUsers();
-
-
-
-
-
 </script>
 
 
