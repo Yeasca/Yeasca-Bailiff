@@ -101,7 +101,105 @@ function ChargerListeUsers() {
     })
 }
 
+function CreationClient() {
+    $.post("/urlWS", {
+        civilite : $("#civiliteClientCreation").val(),
+        nom : $("#nomClientCreation").val(),
+        prenom : $("#prenomClientCreation").val(),
+        numeroVoie : $("#numVoieClientCreation").val(),
+        repetitionVoie : $("#repetitionVoieClientCreation").val(),
+        typeVoie : $("#typeVoieClientCreation").val(),
+        nomVoie : $("#nomVoieClientCreation").val(),
+        complementVoie : $("#complementVoieClientCreation").val(),
+        cp : $("#cpClientCreation").val(),
+        bp : $("#bpClientCreation").val(),
+        ville : $("#villeClientCreation").val()
+    }, function(reponse) {
+        if(reponse.Reussite) {
+            $("#civiliteClientCreation").empty();
+            $("#nomClientCreation").empty();
+            $("#prenomClientCreation").empty();
+            $("#numVoieClientCreation").empty();
+            $("#repetitionVoieClientCreation").empty();
+            $("#typeVoieClientCreation").empty();
+            $("#nomVoieClientCreation").empty();
+            $("#complementVoieClientCreation").empty();
+            $("#cpClientCreation").empty();
+            $("#bpClientCreation").empty();
+            $("#villeClientCreation").empty();
+            $("#messageCreationClient").html("<span class='label label-success'>Création effectuée avec succès</span>");
+        }
+    },"json");
+}
 
+function ModificationClient() {
+    $.post("/urlWS", {
+        civilite : $("#civiliteClientModification").val(),
+        nom : $("#nomClientModification").val(),
+        prenom : $("#prenomClientModification").val(),
+        numeroVoie : $("#numVoieClientModification").val(),
+        repetitionVoie : $("#repetitionVoieClientModification").val(),
+        typeVoie : $("#typeVoieClientModification").val(),
+        nomVoie : $("#nomVoieClientModification").val(),
+        complementVoie : $("#complementVoieClientModification").val(),
+        cp : $("#cpClientModification").val(),
+        bp : $("#bpClientModification").val(),
+        ville : $("#villeClientModification").val()
+    }, function(reponse) {
+        if(reponse.Reussite) {
+            $("#civiliteClientModification").empty();
+            $("#nomClientModification").empty();
+            $("#prenomClientModification").empty();
+            $("#numVoieClientModification").empty();
+            $("#repetitionVoieClientModification").empty();
+            $("#typeVoieClientModification").empty();
+            $("#nomVoieClientModification").empty();
+            $("#complementVoieClientModification").empty();
+            $("#cpClientModification").empty();
+            $("#bpClientModification").empty();
+            $("#villeClientModification").empty();
+            $("#messageModificationClient").html("<span class='label label-success'>Modification effectuée avec succès</span>");
+        }
+    },"json");
+}
+
+function CreationUtilisateur() {
+    $.post("/urlWS", {
+        civilite : $("#civiliteUtilisateurCreation").val(),
+        nom : $("#nomUtilisateurCreation").val(),
+        prenom : $("#prénomUtilisateurCreation").val(),
+        email : $("#emailUtilisateurCreation").val(),
+        motDePasse : $("#motDePasseUtilisateurCreation").val()
+    }, function(reponse) {
+        if(reponse.Reussite) {
+            $("#civiliteUtilisateurCreation").empty();
+            $("#nomUtilisateurCreation").empty();
+            $("#prénomUtilisateurCreation").empty();
+            $("#emailUtilisateurCreation").empty();
+            $("#motDePasseUtilisateurCreation").empty();
+            $("#messageCreationUtilisateur").html("<span class='label label-success'>Création effectuée avec succès</span>");
+        }
+    },"json");
+}
+
+function ModificationUtilisateur() {
+    $.post("/urlWS", {
+        civilite : $("#civiliteUtilisateurModification").val(),
+        nom : $("#nomUtilisateurModification").val(),
+        prenom : $("#prénomUtilisateurModification").val(),
+        email : $("#emailUtilisateurModification").val(),
+        motDePasse : $("#motDePasseUtilisateurModification").val()
+    }, function(reponse) {
+        if(reponse.Reussite) {
+            $("#civiliteUtilisateurModification").empty();
+            $("#nomUtilisateurModification").empty();
+            $("#prénomUtilisateurModification").empty();
+            $("#emailUtilisateurModification").empty();
+            $("#motDePasseUtilisateurModification").empty();
+            $("#messageModificationUtilisateur").html("<span class='label label-success'>Modification effectuée avec succès</span>");
+        }
+    },"json");
+}
 
 var d = new Date();
 var mois = d.getMonth()+1;
@@ -117,3 +215,8 @@ $('#constat-heure').html(heureReconstruite);
 $('#constat-date').html(dateReconstruite);
 
 $('#constat-huissier').html('Yoyo');
+
+if($("#roleUtilisateurCreation").val() == "Huissier")
+{
+    $("#civiliteUtilisateurCreation").prop( "disabled", true );
+}

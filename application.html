@@ -68,14 +68,20 @@
                     </button>
                 </div>
                 <div class="CreationClient" style="display:none;margin-top:15px;">
-                    <input type="text" class="form-control " placeholder="Entrez le compte">
-                    <select class="form-control">
-                        <option>Secrétaire 1</option>
-                        <option>Secrétaire 2</option>
-                        <option>Secrétaire 3</option>
-                        <option>Secrétaire 4</option>
-                    </select>
-                    <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">
+                    <div id="messageCreationClient"></div>
+                    <input id ="civiliteClientCreation" type="text" class="form-control " placeholder="Civilité">
+                    <input id ="nomClientCreation" type="text" class="form-control " placeholder="Nom">
+                    <input id ="prenomClientCreation" type="text" class="form-control " placeholder="Prénom">
+                    <input id ="numVoieClientCreation" type="text" class="form-control " placeholder="Numéro voie">
+                    <input id ="repetitionVoieClientCreation" type="text" class="form-control " placeholder="Répétition voie">
+                    <input id ="typeVoieClientCreation" type="text" class="form-control " placeholder="Type voie">
+                    <input id ="nomVoieClientCreation" type="text" class="form-control " placeholder="Nom voie">
+                    <input id ="complementVoieClientCreation" type="text" class="form-control " placeholder="Complément voie">
+                    <input id ="cpClientCreation" type="text" class="form-control " placeholder="Code postal">
+                    <input id ="bpClientCreation" type="text" class="form-control " placeholder="Boite postale">
+                    <input id ="villeClientCreation" type="text" class="form-control " placeholder="Ville">
+
+                    <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right" onclick="CreationClient()">
                         <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Valider
                     </button>
                     <button type="button" class="btn-return-client btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" >
@@ -83,14 +89,20 @@
                     </button>
                 </div>
                 <div class="ModificationClient" style="display:none;margin-top:15px;">
-                    <input type="text" class="form-control " placeholder="Entrez le compte">
-                    <select class="form-control">
-                        <option>Secrétaire 1</option>
-                        <option>Secrétaire 2</option>
-                        <option>Secrétaire 3</option>
-                        <option>Secrétaire 4</option>
-                    </select>
-                    <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">
+                    <div id="messageModificationClient"></div>
+                    <input id ="civiliteClientModification" type="text" class="form-control " placeholder="Civilité">
+                    <input id ="nomClientModification" type="text" class="form-control " placeholder="Nom">
+                    <input id ="prenomClientModification" type="text" class="form-control " placeholder="Prénom">
+                    <input id ="numVoieClientModification" type="text" class="form-control " placeholder="Numéro voie">
+                    <input id ="repetitionVoieClientModification" type="text" class="form-control " placeholder="Répétition voie">
+                    <input id ="typeVoieClientModification" type="text" class="form-control " placeholder="Type voie">
+                    <input id ="nomVoieClientModification" type="text" class="form-control " placeholder="Nom voie">
+                    <input id ="complementVoieClientModification" type="text" class="form-control " placeholder="Complément voie">
+                    <input id ="cpClientModification" type="text" class="form-control " placeholder="Code postal">
+                    <input id ="bpClientModification" type="text" class="form-control " placeholder="Boite postale">
+                    <input id ="villeClientModification" type="text" class="form-control " placeholder="Ville">
+
+                    <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right" onclick="ModificationClient()">
                         <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Valider
                     </button>
                     <button type="button" class="btn-return-client btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" >
@@ -117,13 +129,50 @@
                 </button>
                 <div class=" row col-xs-12 col-sm-12 col-md-12 col-lg-12" >
                     <div class="CreationUtilisateur" style="display:none;margin-top:15px;">
-                        <input type="text" class="form-control " placeholder="Entrez le compte">
-                        <select class="form-control">
+                        <div id="messageCreationUtilisateur"></div>
+                        <select id="roleUtilisateurCreation" class="form-control">
                             <option>Secrétaire</option>
                             <option>Huissier</option>
                         </select>
+                        <select id="civiliteUtilisateurCreation" class="form-control">
+                            <option></option>
+                            <option>M</option>
+                            <option>Mme</option>
+                            <option>Mlle</option>
+                        </select>
+                        <input id="nomUtilisateurCreation" type="text" class="form-control " placeholder="Nom">
+                        <input id="prénomUtilisateurCreation" type="text" class="form-control " placeholder="Prénom">
+                        <input id="emailUtilisateurCreation" type="email" class="form-control " placeholder="Email">
+                        <input id="motDePasseUtilisateurCreation" type="password" class="form-control " placeholder="Mot de passe">
+
+
                         <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">
-                            <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Valider
+                            <span class="glyphicon glyphicon glyphicon-plus-sign" onclick="CreationUtilisateur()"></span> Valider
+                        </button>
+                        <button type="button" class="btn-return-user btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" >
+                            <span class="glyphicon glyphicon-chevron-left"></span> Retour
+                        </button>
+                    </div>
+                    <div class="ModificationUtilisateur" style="display:none;margin-top:15px;">
+                        <div id="messageModificationUtilisateur"></div>
+                        <select id="roleUtilisateurModification" class="form-control">
+                            <option>Secrétaire</option>
+                            <option>Huissier</option>
+                        </select>
+                        <select id="civiliteUtilisateurModification" class="form-control">
+                            <option></option>
+                            <option>M</option>
+                            <option>Mme</option>
+                            <option>Mlle</option>
+                        </select>
+                        <input id="nomUtilisateurModification" type="text" class="form-control " placeholder="Nom">
+                        <input id="prénomUtilisateurModification" type="text" class="form-control " placeholder="Prénom">
+                        <input id="emailUtilisateurModification" type="email" class="form-control " placeholder="Email">
+                        <input id="motDePasseUtilisateurModification" type="password" class="form-control " placeholder="Mot de passe">
+
+
+                        <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">
+                            <span class="glyphicon glyphicon glyphicon-plus-sign" onclick="ModificationUtilisateur()"></span> Valider
                         </button>
                         <button type="button" class="btn-return-user btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" >
                             <span class="glyphicon glyphicon-chevron-left"></span> Retour
@@ -136,7 +185,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+      <!--  <div class="row">
             <div id="compte" style="display:none;margin-top:15px;">
                 <div class="row col-xs-5 col-sm-5 col-md-5 col-lg-5" >
                     <input type="text" class="form-control " placeholder="Entrez le compte">
@@ -148,7 +197,7 @@
                     </select>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 <style>
