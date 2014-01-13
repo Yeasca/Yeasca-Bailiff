@@ -59,10 +59,30 @@
         <div class="row">
             <div id="fichierclient" style="display:none;margin-top:15px;">
                 <h2>Liste des clients</h2>
-                <button type="button" class="btn-client btn btn-default  col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-                    <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Créer un client
-                </button>
+                <div>
+                    <button type="button" class="btn-client btn btn-default  col-xs-6 col-sm-6 col-md-6 col-lg-6" >
+                        <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Créer un client
+                    </button>
+                    <button type="button" class="btn-user btn btn-default  col-xs-6 col-sm-6 col-md-6 col-lg-6" >
+                        <span class="glyphicon glyphicon-pencil"></span> Modifier un client
+                    </button>
+                </div>
                 <div class="CreationClient" style="display:none;margin-top:15px;">
+                    <input type="text" class="form-control " placeholder="Entrez le compte">
+                    <select class="form-control">
+                        <option>Secrétaire 1</option>
+                        <option>Secrétaire 2</option>
+                        <option>Secrétaire 3</option>
+                        <option>Secrétaire 4</option>
+                    </select>
+                    <button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">
+                        <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Valider
+                    </button>
+                    <button type="button" class="btn-return-client btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" >
+                        <span class="glyphicon glyphicon-chevron-left"></span> Retour
+                    </button>
+                </div>
+                <div class="ModificationClient" style="display:none;margin-top:15px;">
                     <input type="text" class="form-control " placeholder="Entrez le compte">
                     <select class="form-control">
                         <option>Secrétaire 1</option>
@@ -90,7 +110,10 @@
             <div id="utilisateurs" style="display:none;margin-top:15px;">
                 <h2>Liste des Utilisateurs</h2>
                 <button type="button" class="btn-user btn btn-default  col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-                    <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Créer un utilisateurs
+                    <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Créer un utilisateur
+                </button>
+                <button type="button" class="btn-user btn btn-default  col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+                    <span class="glyphicon glyphicon-pencil"></span> Modifier un utilisateur
                 </button>
                 <div class=" row col-xs-12 col-sm-12 col-md-12 col-lg-12" >
                     <div class="CreationUtilisateur" style="display:none;margin-top:15px;">
