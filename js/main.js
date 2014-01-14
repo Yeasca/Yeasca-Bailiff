@@ -8,17 +8,15 @@ function AfficherListeClients() {
 
 }
 
-function AfficherUsers() {
-    $(".usergeneral").on("click", function() {
-        if($(this).next(".Utilisateur").attr('style') == 'display: block;'){
-            $(this).next(".Utilisateur").slideUp(200);
+function AfficherUsers(lediv) {
+        if($(lediv).next(".Utilisateur").attr('style') == 'display: block;'){
+            $(lediv).next(".Utilisateur").slideUp(200);
         } else {
             $(".Utilisateur").each(function(){
                 $(this).slideUp(200);
             });
-            $(this).next(".Utilisateur").slideToggle(200);
+            $(lediv).next(".Utilisateur").slideToggle(200);
         }
-    });
     $(".Utilisateur").on("click", function() {
         $(this).slideUp(200);
     });
@@ -40,19 +38,17 @@ function AfficherConstat() {
     });
 }
 
-function AfficherContratDuClient() {
-    $(".clientgeneral").on("click", function() {
-        if($(this).next(".fichierclientid").attr('style') == 'display: block;'){
-            $(this).next(".fichierclientid").slideUp(200);
+function AfficherContratDuClient(lediv) {
+        if($(lediv).next(".fichierclientid").attr('style') == 'display: block;'){
+            $(lediv).next(".fichierclientid").slideUp(200);
         } else {
             $(".fichierclientid").each(function(){
                 $(this).slideUp(200);
             });
-            $(this).next(".fichierclientid").slideToggle(200);
+            $(lediv).next(".fichierclientid").slideToggle(200);
         }
-    });
     $(".fichierclientid").on("click", function() {
-        $(this).slideUp(200);
+        $(lediv).slideUp(200);
     });
 }
 
@@ -70,7 +66,7 @@ function ChargerListeClients() {
     $.getJSON('FichierTestClients.json', function(données) {
         $.each(données.ListeClient, function(key,val){
             $('div#lesclients').append(
-                '<div class="clientgeneral" onclick="AfficherContratDuClient()"><li class="client_list list-group-item"><span class="badge" >14</span>'+val.nom+'</li></div>' +
+                '<div class="clientgeneral" onclick="AfficherContratDuClient(this)"><li class="client_list list-group-item">'+val.nom+'<button class="btn btn-default col-xs-0 col-sm-0 col-md-0 col-lg-0" style="float:right;font-size: 10px;"><span class="glyphicon glyphicon-pencil"></span></button></li></div>' +
                     '<div class="fichierclientid" style="display:none">'+
                     '<ul class="list-group">' +
                     '<a class="client_fichier_list list-group-item" href="constatexemple.html" target="_blank">'+val.Constat[0].IDConstat+'</a>' +
@@ -82,11 +78,16 @@ function ChargerListeClients() {
     })
 }
 
+function AfficherModifUsers(p) {
+    console.log($(p).next(".ModificationUtilisateur"));
+    $(p).next(".Utilisateur").slideUp(200);
+    $(p).next(".ModificationUtilisateur").slideToggle(200);
+}
 function ChargerListeUsers() {
     $.getJSON('FichierTestUsers.json', function(données) {
         $.each(données.ListeUsers, function(key,val){
             $('div#lesusers').append(
-                '<div class="usergeneral" onclick="AfficherUsers()"><li class="client_list list-group-item" >'+val.nom+'<div class="row-reverse"><button class="btn btn-default col-xs-0 col-sm-0 col-md-0 col-lg-0"><span class="glyphicon glyphicon-pencil"></span></button></div></li></div>'+
+                '<div class="usergeneral" onclick="AfficherUsers(this)"><li class="client_list list-group-item" >'+val.nom+'<button class="btn btn-default col-xs-0 col-sm-0 col-md-0 col-lg-0" style="float:right;font-size: 10px;" onclick="AfficherModifUsers(this)"><span class="glyphicon glyphicon-pencil"></span></button></li></div>'+
                     '<div class="Utilisateur">'+
                     '<ul class="client_fichier_list list-group">'+
                     '<li class="list-group-item">'+val.mail+'</li>'+
@@ -95,6 +96,27 @@ function ChargerListeUsers() {
                     '<li class="list-group-item">'+val.CodePostal+'</li>'+
                     '<li class="list-group-item">'+val.Téléphone+'</li>'+
                     '</ul>'+
+                    '</div>'+
+                    '<div class="ModificationUtilisateur">'+
+                        '<button type="button" class="btn-ok btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" style="float:right">'+
+                        '<span class="glyphicon glyphicon glyphicon-plus-sign" onclick=""></span> Valider'+
+                        '</button>'+
+                        '<button type="button" class="btn-return-user btn btn-default  col-xs-5 col-sm-5 col-md-5 col-lg-5" >'+
+                        '<span class="glyphicon glyphicon-chevron-left"></span> Retour'+
+                        '</button>'+
+                        '<select id="roleUtilisateurModification" class="form-control">'+
+                        '<option>Secrétaire</option>'+
+                        '<option>Huissier</option>'+
+                        '</select>'+
+                        '<select id="civiliteUtilisateurModification" class="form-control">'+
+                        '<option></option>'+
+                        '<option>M</option>'+
+                        '<option>Mme</option>'+
+                        '<option>Mlle</option>'+
+                        '</select>'+
+                        '<input id="nomUtilisateurModification" type="text" class="form-control " placeholder="Nom">'+
+                        '<input id="prénomUtilisateurModification" type="text" class="form-control " placeholder="Prénom">'+
+                        '<input id="emailUtilisateurModification" type="email" class="form-control " placeholder="Email">'+
                     '</div>'
             )
         })
@@ -183,6 +205,20 @@ function CreationUtilisateur() {
 }
 
 function ModificationUtilisateur() {
+    $(".clientgeneral").on("click", function() {
+        if($(this).next(".fichierclientid").attr('style') == 'display: block;'){
+            $(this).next(".fichierclientid").slideUp(200);
+        } else {
+            $(".fichierclientid").each(function(){
+                $(this).slideUp(200);
+            });
+            $(this).next(".fichierclientid").slideToggle(200);
+        }
+    });
+    $(".fichierclientid").on("click", function() {
+        $(this).slideUp(200);
+    });
+
     $.post("/urlWS", {
         civilite : $("#civiliteUtilisateurModification").val(),
         nom : $("#nomUtilisateurModification").val(),
