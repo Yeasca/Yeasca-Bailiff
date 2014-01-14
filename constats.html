@@ -74,30 +74,22 @@
                 </div>
             </div>
         <div class="row">
-            <div class="constatgeneral" onclick="AfficherConstat()"><li class="constat_list list-group-item" >Ref Constat 1 Crée le 01/04/1990</li></div>
-            <div class="Fichier" style="display:none">
-            <ul class="constat_fichier_list list-group">
-                <li class="list-group-item"> fichiers du constats </li>
-                <li class="list-group-item"> fichiers du constats </li>
-                <li class="list-group-item"> fichiers du constats </li>
-                <li class="list-group-item"> fichiers du constats </li>
-            </ul>
+            <div id="lesconstats"></div>
+
             </div>
-            <div class="constatgeneral" onclick="AfficherConstat()"><li class="constat_list list-group-item" >Ref Constat 2 Crée le 01/04/1990</li></div>
-            <div class="Fichier" style="display:none">
-                <ul class="constat_fichier_list list-group">
-                    <li class="list-group-item"> fichiers du constats </li>
-                    <li class="list-group-item"> fichiers du constats </li>
-                    <li class="list-group-item"> fichiers du constats </li>
-                    <li class="list-group-item"> fichiers du constats </li>
-                </ul>
-            </div>
-        </div>
         </div>
     </div>
 </div>
 </div>
 <script type="text/javascript">
+    ChargerListeConstats();
+    ChargerListeConstats();
+    ChargerListeConstats();
+    ChargerListeConstats();
+    ChargerListeConstats();
+    ChargerListeConstats();
+    ChargerListeConstats();
+
     $(function() {
         $('#datepickerdebut').datepicker({
             language: 'fr'
@@ -107,6 +99,26 @@
         $('#datepickerfin').datepicker({
             language: 'fr'
         });
+    });
+
+    var offsetconstat = $('.constatgeneral:last').offset();
+    var load=false;
+    $(window).scroll(function(){
+        offsetconstat= $('.constatgeneral:last').offset();
+        if((offsetconstat.top-$(window).height()<= $(window).scrollTop())&& load==false)
+        {
+            load=true;
+            $('.loadmore').show();
+            $.ajax({
+                success:function(data){
+                    ChargerListeConstats();
+
+                    $('.loadmore').fadeOut(500);
+                }
+
+            });
+            load=false;
+        }
     });
 </script>
 

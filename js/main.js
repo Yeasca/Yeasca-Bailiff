@@ -22,17 +22,15 @@ function AfficherUsers(lediv) {
     });
 }
 
-function AfficherConstat() {
-    $(".constatgeneral").on("click", function() {
-        if($(this).next(".Fichier").attr('style') == 'display: block;'){
-            $(this).next(".Fichier").slideUp(200);
+function AfficherConstat(lediv) {
+         if($(lediv).next(".Fichier").attr('style') == 'display: block;'){
+            $(lediv).next(".Fichier").slideUp(200);
         } else {
             $(".Fichier").each(function(){
                 $(this).slideUp(200);
             });
-            $(this).next(".Fichier").slideToggle(200);
+            $(lediv).next(".Fichier").slideToggle(200);
         }
-    });
     $(".Fichier").on("click", function() {
         $(this).slideUp(200);
     });
@@ -78,9 +76,30 @@ function ChargerListeClients() {
     })
 }
 
+function ChargerListeConstats() {
+    $.getJSON('FichierTestConstat.json', function(données) {
+        $.each(données.ListeConstats, function(key,val){
+            $('div#lesconstats').append(
+                '<div class="constatgeneral" onclick="AfficherConstat(this)"><li class="constat_list list-group-item" >'+val.ref +'</li></div>'+
+                '<div class="Fichier" style="display:none">'+
+                '<ul class="constat_fichier_list list-group">'+
+                '<li class="list-group-item">'+ val.FichierConstat[0].IDFichier +'</li>'+
+                '<li class="list-group-item">'+ val.FichierConstat[1].IDFichier +'</li>'+
+                '<li class="list-group-item">'+ val.FichierConstat[2].IDFichier +'</li>'+
+                '<li class="list-group-item">'+ val.FichierConstat[3].IDFichier +'</li>'+
+                '</ul>'+
+                '</div>'
+            );
+        })
+    })
+}
+
 function AfficherModifUsers(p) {
+    if($(p).next(".Utilisateur").attr('style') == 'display: block;'){
+        $(p).next(".Utilisateur").slideUp(200);
+    }
     console.log($(p).next(".ModificationUtilisateur"));
-    $(p).next(".Utilisateur").slideUp(200);
+
     $(p).next(".ModificationUtilisateur").slideToggle(200);
 }
 function ChargerListeUsers() {

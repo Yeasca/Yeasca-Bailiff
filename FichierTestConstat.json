@@ -1,0 +1,39 @@
+{"ListeConstats":[
+    {
+        "ref": "51213",
+        "date":"21/04/1990",
+        "FichierConstat": [
+            {
+                "IDFichier":"Fichier 1"
+            },
+            {
+                "IDFichier":"Fichier 2"
+            },
+            {
+                "IDFichier":"Fichier 3"
+            },
+            {
+                "IDFichier":"Fichier 4"
+            }
+
+        ]
+    },
+    {
+        "ref": "56235",
+        "date":"21/04/1990",
+        "FichierConstat": [
+            {
+                "IDFichier":"Fichier 1"
+            },
+            {
+                "IDFichier":"Fichier 2"
+            },
+            {
+                "IDFichier":"Fichier 3"
+            },
+            {
+                "IDFichier":"Fichier 4"
+            }
+        ]
+    }
+]}
