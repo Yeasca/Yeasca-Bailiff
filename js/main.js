@@ -31,9 +31,6 @@ function AfficherConstat(lediv) {
             });
             $(lediv).next(".Fichier").slideToggle(200);
         }
-    $(".Fichier").on("click", function() {
-        $(this).slideUp(200);
-    });
 }
 
 function AfficherContratDuClient(lediv) {
@@ -83,8 +80,8 @@ function ChargerListeConstats() {
                 '<div class="constatgeneral" onclick="AfficherConstat(this)"><li class="constat_list list-group-item" >'+val.ref +'</li></div>'+
                 '<div class="Fichier" style="display:none">'+
                 '<ul class="constat_fichier_list list-group">'+
-                '<li class="list-group-item">'+ val.FichierConstat[0].IDFichier +'</li>'+
-                '<li class="list-group-item">'+ val.FichierConstat[1].IDFichier +'</li>'+
+                '<li class="list-group-item"><video controls src="Rings.mp4" controls="controls">Ici la description alternative</video>'+ val.FichierConstat[0].IDFichier +'</li>'+
+                '<li class="list-group-item"><audio controls src="Rings.mp4" controls="controls">Ici la description alternative</audio>'+ val.FichierConstat[1].IDFichier +'</li>'+
                 '<li class="list-group-item">'+ val.FichierConstat[2].IDFichier +'</li>'+
                 '<li class="list-group-item">'+ val.FichierConstat[3].IDFichier +'</li>'+
                 '</ul>'+
