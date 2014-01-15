@@ -78,6 +78,10 @@ function ChargerListeConstats() {
         $.each(données.ListeConstats, function(key,val){
             $('div#lesconstats').append(
                 '<div class="constatgeneral" onclick="AfficherConstat(this)"><li class="constat_list list-group-item" >'+val.ref +'</li></div>'+
+                '<div class="nomClient">Nom</div>'+
+                '<div class="prenomClient">Prénom</div>'+
+                '<div class="nomHuissier">Huissier</div>'+
+                '<div class="dateConstat">Date</div>'+
                 '<div class="Fichier" style="display:none">'+
                 '<ul class="constat_fichier_list list-group">'+
                 '<li class="list-group-item"><video controls src="Rings.mp4" controls="controls">Ici la description alternative</video>'+ val.FichierConstat[0].IDFichier +'</li>'+
